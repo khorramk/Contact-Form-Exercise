@@ -14,7 +14,7 @@
     </head>
     <body class="antialiased">
         <div id="app" class="row">
-            <div class="col-md-6 col-sm-12 my-auto col-lg-6 col-xl-6 pb-1">
+            <div class="col-md-6 col-sm-12 my-auto col-lg-6 col-xl-6 bg-danger p-4">
                <span class="display-2">Contact Us</span>
 
             </div>
