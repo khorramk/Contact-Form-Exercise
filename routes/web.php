@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('contact-form');
 });
+
+Route::get('/message', function () {
+    return view('submission-message');
+})->name('submissionMessage');
