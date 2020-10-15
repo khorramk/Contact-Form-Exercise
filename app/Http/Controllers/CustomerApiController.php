@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
 class CustomerApiController extends Controller
@@ -36,8 +37,21 @@ class CustomerApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        //store it in database
+
+        $customer = new Customer();
+
+        if (!empty($request['first_name']) && !empty($request['last_name'])) {
+            $customer['first_name'] = $request['first_name'];
+            $customer['last_name'] = $request['last_name'];
+            $customer['email'] = $request['email'];
+            $customer['phone_number'] = $request['phone'];
+            $customer['message'] = $request['message'];
+            $customer->save();
+        }
+
+
+        return redirect()->route('submissionMessage');
+
     }
 
     /**
