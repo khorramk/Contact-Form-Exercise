@@ -15,5 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
+    Route::resource('admin', CustomerApiController::class);
     return $request->user();
 });
+
+Route::resource('submit', CustomerApiController::class)->only([
+    'store'
+]);
