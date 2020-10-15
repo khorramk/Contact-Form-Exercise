@@ -54,7 +54,9 @@ export default {
                 console.log(this.user);
                 this.nonClickable = true;
                 this.submitted = 'Submitted'
-                axios.post('/api/submit', this.user).then(() => /**response or redirect**/'');
+                axios.post('/api/submit', this.user).then((response) => {
+                    window.location.href = '/message';
+                });
             }
         }
 }
