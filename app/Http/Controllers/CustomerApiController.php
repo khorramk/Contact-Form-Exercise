@@ -40,14 +40,14 @@ class CustomerApiController extends Controller
 
         $customer = new Customer();
 
-        if (!empty($request['first_name']) && !empty($request['last_name'])) {
-            $customer['first_name'] = $request['first_name'];
-            $customer['last_name'] = $request['last_name'];
-            $customer['email'] = $request['email'];
-            $customer['phone_number'] = $request['phone'];
-            $customer['message'] = $request['message'];
-            $customer->save();
-        }
+
+        $customer['first_name'] = $request['first_name'];
+        $customer['last_name'] = $request['last_name'];
+        $customer['email'] = $request['email'];
+        $customer['phone_number'] = $request['phone'];
+        $customer['message'] = $request['message'];
+        $customer->save();
+
 
 
         return redirect()->route('submissionMessage');
